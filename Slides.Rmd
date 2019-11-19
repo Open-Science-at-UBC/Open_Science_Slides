@@ -9,11 +9,9 @@ output:
 
 ## Where are these slides?
 
-https://
+<p class="center">https://open-science-at-ubc.github.io/Open_Science_Slides/</p>
 
 ## What is Open Science
-
-
 
 ## What is Open Science
 
