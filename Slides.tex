@@ -1,0 +1,319 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Open Science},
+  pdfauthor={Mathew Vis-Dunbar},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Open Science}
+\author{Mathew Vis-Dunbar}
+\date{November 19, 2019}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Where are these slides?}
+\protect\hypertarget{where-are-these-slides}{}
+
+\url{https://}
+
+\end{frame}
+
+\begin{frame}{What is Open Science}
+\protect\hypertarget{what-is-open-science}{}
+
+Discussion
+
+\end{frame}
+
+\begin{frame}{What is science trying to do?}
+\protect\hypertarget{what-is-science-trying-to-do}{}
+
+Discussion
+
+\end{frame}
+
+\begin{frame}{The issue}
+\protect\hypertarget{the-issue}{}
+
+\begin{quote}
+\ldots{[}M{]}ost claimed research findings are false\ldots{} *
+\end{quote}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Small population sizes
+\item
+  Low effect sizes
+\item
+  Flexibility in: designs, definitions, outcomes, \& analytical modes
+\item
+  Interests and prejudice (financial etc)
+\item
+  The goal is statistical significance
+\item
+  Large number and little pre-selection of tested relationships
+\end{itemize}
+
+{* Ioannidis, J. P. A. (2005). Why Most Published Research Findings Are
+False. PLoS Medicine, 2(8).
+\url{https://doi.org/10.1371/journal.pmed.0020124}}
+
+\end{frame}
+
+\begin{frame}{A defining feature of science}
+\protect\hypertarget{a-defining-feature-of-science}{}
+
+\begin{quote}
+\textbf{Reproducibility is a defining feature of science} \ldots{}
+Scientific claims should not gain credence because of the status or
+authority of their originator but by the replicability of their
+supporting evidence. Even research of exemplary quality may have
+irreproducible empirical findings\ldots{} *
+\end{quote}
+
+{* Open Science Collaboration. (2015). Estimating the reproducibility of
+psychological science. Science, 349(6251).
+\url{https://doi.org/10.1126/science.aac4716}}
+
+\end{frame}
+
+\begin{frame}{A test}
+\protect\hypertarget{a-test}{}
+
+\begin{quote}
+We conducted \textbf{replications of 100 \ldots{} studies} published in
+three psychology journals using \textbf{high-powered designs} and
+\textbf{original materials when available}\ldots{} *
+\end{quote}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  {97 \%} of \textbf{original} studies had {statistically significant
+  results}
+\item
+  {36 \%} of \textbf{replications} had {statistically significant
+  results}
+\end{itemize}
+
+{* Open Science Collaboration. (2015). Estimating the reproducibility of
+psychological science. Science, 349(6251).
+\url{https://doi.org/10.1126/science.aac4716}}
+
+\end{frame}
+
+\begin{frame}{Retractions in Medline}
+\protect\hypertarget{retractions-in-medline}{}
+
+\begin{block}{A comment on the state of rigor}
+
+\includegraphics{Slides_files/figure-beamer/unnamed-chunk-1-1.pdf}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{The solution}
+\protect\hypertarget{the-solution}{}
+
+\begin{block}{Open Science and Reproducible Practices}
+
+\begin{itemize}
+\tightlist
+\item
+  Rigorous methodologies (individual researchers)
+\item
+  A culture of change: a framework of incentivisation (publishers,
+  funders, employers)
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\hypertarget{reproducibility}{%
+\section{Reproducibility}\label{reproducibility}}
+
+\begin{frame}{Terminology}
+\protect\hypertarget{terminology}{}
+
+\begin{block}{Computational reproducibility}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Data and code are packaged, such that if reran, we can reproduce the
+  numbers and graphs in a paper.
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Methods reproducibility}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  There is enough information to rerun the experiment/survey in the way
+  that it was originally conducted.
+\end{itemize}
+
+\end{block}
+
+\begin{block}{Results reproducibility}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Through methods replication, new data is collected, and the same
+  statistical conclusion is reached.
+\end{itemize}
+
+\end{block}
+
+\end{frame}
+
+\hypertarget{rigorous-methodologies}{%
+\section{Rigorous methodologies}\label{rigorous-methodologies}}
+
+\begin{frame}{Being explicit: exploratory and confirmatory research}
+\protect\hypertarget{being-explicit-exploratory-and-confirmatory-research}{}
+
+\begin{block}{Exploratory research}
+
+Is looking for correlation.
+
+\end{block}
+
+\begin{block}{Confirmatory research}
+
+Is looking for causation.
+
+\emph{Exploratory research sneaks its way in to otherwise confirmatory
+outputs}
+
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Transparency in the research process}
+\protect\hypertarget{transparency-in-the-research-process}{}
+
+\end{frame}
+
+\begin{frame}{Shifting where review is done}
+\protect\hypertarget{shifting-where-review-is-done}{}
+
+\end{frame}
+
+\begin{frame}{The publication of only statistically significant results}
+\protect\hypertarget{the-publication-of-only-statistically-significant-results}{}
+
+\end{frame}
+
+\hypertarget{a-culture-of-change}{%
+\section{A culture of change}\label{a-culture-of-change}}
+
+\begin{frame}{The traditional model}
+\protect\hypertarget{the-traditional-model}{}
+
+{[}Image here{]}
+
+\end{frame}
+
+\end{document}

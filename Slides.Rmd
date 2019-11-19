@@ -1,0 +1,249 @@
+---
+title: "Open Science"
+author: "Mathew Vis-Dunbar & Jason Pither"
+date: "November 19, 2019"
+output:
+  ioslides_presentation:
+    css: style.css
+---
+
+## Where are these slides?
+
+https://
+
+## What is Open Science
+
+
+
+## What is Open Science
+
+<p class="center">Scientific research conducted and communicated in an honest, accessible, and transparent way, such that independent researchers can reproduce the results.</p>
+
+## What is Open Science
+
+> Open science (OS) comprises a set of institutional policies, infrastructure and relationships related to open access publication, open data and scientific resources, and lack of restrictive intellectual and other proprietary rights with the goal of increasing the quality and credibility of scientific outputs, increasing efficiency, and spurring both discovery and innovation. *
+
+<span class="reference">\* Ali-Khan, S. E., Jean, A., & Gold, E. R. (2018). Identifying the challenges in implementing open science. MNI Open Research, 2, 5. https://doi.org/10.12688/mniopenres.12805.1
+</span>
+
+## What is science trying to do? {.flexbox .vcenter}
+
+
+## The issue
+
+> Today, few published results are reproducible in any practical sense. To verify them requires almost as much effort as it took to create them originally. After a time, authors are often unable to reproduce their own results! For these reasons, many people ignore most of the literature. *
+
+<span class="reference">\* Claerbout, J. Earth soundings analysis. 1992. Blackwell, Oxford.</span>
+
+## The issue
+
+<p class="center">Without the data and detailed methods, findings can't be verified.</p>
+
+## The issue
+
+> …[M]ost claimed research findings are false… *
+
+> - Small population sizes
+- Low effect sizes
+- Flexibility in: designs, definitions, outcomes, & analytical modes
+- Interests and prejudice (financial etc)
+- The goal is statistical significance
+- Large number and little pre-selection of tested relationships
+
+<span class="reference">\* Ioannidis, J. P. A. (2005). Why Most Published Research Findings Are False. PLoS Medicine, 2(8). https://doi.org/10.1371/journal.pmed.0020124</span>
+
+## A defining feature of science
+
+> **Reproducibility is a defining feature of science** ... Scientific claims should not gain credence because of the status or authority of their originator but by the replicability of their supporting evidence. Even research of exemplary quality may have irreproducible empirical findings... *
+
+<span class="reference">\* Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716</span>
+
+## A test
+
+> We conducted **replications of 100 … studies** published in three psychology journals using **high-powered designs** and **original materials when available**… *
+
+> - <span style="font-size:150%; color:green;">97 %</span> of **original** studies had <span style="color:green;">statistically significant results</span>
+> - <span style="font-size:150%;color:red;">36 %</span> of **replications** had <span style="color:red;">statistically significant results</span>
+
+<span class="reference">\* Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716</span>
+
+## Retractions in Medline
+
+```{r, echo = FALSE, message = FALSE}
+library(tidyverse)
+data <- read.csv("./Data_Images/timeline.csv")
+
+ggplot(data, aes(x = data$year, y= data$count)) +
+  geom_point (color = "#fec210", size = 4) +
+  geom_line (color = "#456789", size = 2) +
+  xlab("Year") +
+  ylab("Number of Retractions") +
+  theme(axis.text.x = element_text(angle = 45)) +
+  scale_x_continuous(breaks = seq(1966, 2020, by = 6)) +
+  theme_bw() +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank()) +
+  theme(panel.border = element_blank())
+```
+
+## The solution {.build}
+
+### Open Science and Reproducible Practices
+- Rigorous methodologies (individual researchers)
+- A culture of change: a framework of incentivisation (publishers, funders, employers)
+
+# Reproducibility
+
+## Terminology
+
+### Computational reproducibility
+
+> - Data and code are packaged, such that if reran, we can reproduce the numbers and graphs in a paper.
+
+### Methods reproducibility
+
+> - There is enough information to rerun the experiment/survey in the way that it was originally conducted.
+
+### Results reproducibility
+
+> - Through methods replication, new data is collected, and the same statistical conclusion is reached.
+
+## Terminology
+
+### Computational reproducibility
+
+- Data and code are packaged, such that if reran, we can reproduce the numbers and graphs in a paper.
+
+### Methods reproducibility
+
+- There is enough information to rerun the experiment/survey in the way that it was originally conducted.
+
+### Results reproducibility
+
+- <span style="color:red;">Through methods replication, new data is collected, and the same statistical conclusion is reached.</span>
+
+# Rigorous methodologies
+
+## Points of pitfall
+<p class="center">
+
+[Threats to reproducible science](https://www.nature.com/articles/s41562-016-0021/figures/1)
+</p>
+
+## Points of pitfall
+
+<p class="center">Poor statistical design</p>
+
+> If a study has low power, the critical value needed to achieve significance at P ≤0.05 can be much larger than the true effect size, leading to overestimates of the effect size and irreproducible results. *
+
+<span class="reference">\* Lemoine, N. P., Hoffman, A., Felton, A. J., Baur, L., Chaves, F., Gray, J., . . . Smith, M. D. (2016). Underappreciated problems of low replication in ecological field studies. Ecology, 97(10), 2554-2561. doi:10.1002/ecy.1506</span>
+
+## Points of pitfall
+
+<p class="center">The winner's curse</p>
+
+> A study with low statistical power has a reduced chance of detecting a true effect, but it is less well appreciated that low power also reduces the likelihood that a statistically significant result reflects a true effect. *
+
+<span class="reference">\* Button, K., Ioannidis, J., Mokrysz, C., Nosek, B., Flint, J., Robinson, E., & Munafo, M. (2013). Power failure: Why small sample size undermines the reliability of neuroscience. Nature Reviews Neuroscience, 14(5), 365-376. doi:10.1038/nrn3475</span>
+
+## Points of pitfall
+
+<p class="center">Researcher degrees of freedom</p>
+
+- All data processing and analytical choices made **after** seeing and interacting with your data
+- Results become **data dependent**, and no longer adhere to the original hypothesis testing model
+
+## Being explicit: exploratory and confirmatory research
+<div class="center">
+### Exploratory research
+Finds correlation.
+
+### Confirmatory research
+Is looking for causation.
+
+*Exploratory research sneaks its way in to otherwise confirmatory outputs*
+</div>
+
+# Publication bias
+
+## The publication of only statistically significant results
+
+<p class="center">[An analysis by discipline](https://doi.org/10.1371/journal.pone.0010068.g001)</p>
+
+## File Drawer
+<div class="smallText">
+| University or Institution | % of registered trials missing results |
+| --- | ---: |
+|U Health Network | 76.3 |
+| U of Calgary | 75.8 |
+| U Of British Columbia | 72.4 |
+| Queen's University | 70.2 |
+| U of Manitoba | 67.2 |
+| U of Alberta | 66.7 |
+| U of Toronto | 65.5 |
+| Ottawa Hospital Research Institute | 63.8 |
+| Hospital for Sick Children | 62.1 |
+| Total | 69.9 |
+</div>
+
+<span class="reference">Hol, D. (2016, Nov 24). 'We've been deceived': Many clinical trial results are never published. CBC. https://www.cbc.ca/news/health/clinical-trial-results-not-published-1.3865785</span>
+
+# A culture of change
+
+## Researchers
+
+- Transparency in the research process
+- Publish protocols/ Register studies
+- Deposit data
+- Know the points of bias
+  - Publication
+  - Statistical design
+  - Data driven conclusions vs conclusion driven data
+- Script
+
+## Protocols and Registrations
+
+<p class="center">[Science is improving](https://journals.plos.org/plosone/article/figure?id=10.1371/journal.pone.0132382.g001)</p>
+
+## Deposit Data
+
+> Among the 104 articles with empirical data in which protocols or data sharing would be pertinent, 19 (18.3% [11.6% to 27.3%]) discussed publicly available data; only one (1.0% [0.1% to 6.0%]) included a link to a full study protocol. *
+
+<span class="reference">\* Wallach, J. D., Boyack, K. W., & Ioannidis, J. P. A. (2018). Reproducible research practices, transparency, and open access data in the biomedical literature, 2015–2017. PLoS Biology; San Francisco, 16(11), e2006930. http://dx.doi.org.ezproxy.library.ubc.ca/10.1371/journal.pbio.2006930</span>
+
+## Journals
+
+- [Registered reports](https://cos.io/rr/)
+- Require best Practices
+- [Acknowledge best practices](https://www.psychologicalscience.org/publications/observer/obsonline/psychological-science-badge-program-encourages-open-practices-study-shows.html)
+
+## Funders
+
+- Tri-agency requiring Open Access moving to required data deposit.
+
+## Institutions
+
+- Metrics
+- An ecosystem of infrastructure
+- Awareness
+
+## Benefits
+
+- Saves time & money
+- Increase exposure
+- Re-use methods / code
+- Avoid duplication
+- Enable replication
+- Facilitate knowledge syntheses (meta-analyses)
+- Promotes accurate discovery
+
+## Tools
+
+- [OSF](https://osf.io/)
+- [Git](https://github.com/)
+- Open lab books & RMarkdown
+- Scripting
+- [Data management tools](https://researchdata.library.ubc.ca/)
+
+## Questions
+
+<p class="center">?</p>

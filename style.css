@@ -1,0 +1,39 @@
+html, body, p, ul, li {
+  color: #222222;
+}
+
+.title-slide hgroup h1, h2 {
+  color: #0a4c77;
+}
+
+blockquote {
+  background: #bee4fc;
+  border-left: 20px solid #0a4c77;
+  margin: 1em 0em;
+  padding: 1em 0.5em 0.1em 0.5em;
+  color: #000000;
+  text-align: center;
+  line-height: 1.3em;
+}
+
+.reference {
+  Position: absolute;
+  bottom: 50px;
+  margin-right: 50px;
+  font-size: 60%;
+}
+
+.center {
+  text-align: center;
+}
+
+td, th {
+  font-size: 65% !important;
+  padding: 8px !important;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
